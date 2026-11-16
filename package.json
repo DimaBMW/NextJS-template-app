@@ -12,6 +12,8 @@
     "build": "next build",
     "start": "next start",
     "analyze": "next analyze",
+    "audit:secrets": "gitleaks git --redact --no-banner",
+    "audit:site": "unlighthouse",
     "lint": "biome check && pnpm lint:styles",
     "lint:styles": "stylelint \"{src,app}/**/*.{css,scss}\"",
     "lint:styles:fix": "pnpm lint:styles --fix",
