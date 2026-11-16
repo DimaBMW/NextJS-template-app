@@ -2,23 +2,40 @@
   "name": "nextjs-template-app",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@12.21.0",
+  "engines": {
+    "node": "^26.13.1",
+    "pnpm": "12.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "biome check",
+    "analyze": "next analyze",
+    "lint": "biome check && pnpm lint:styles",
+    "lint:styles": "stylelint \"{src,app}/**/*.{css,scss}\"",
+    "lint:styles:fix": "pnpm lint:styles --fix",
     "format": "biome format --write"
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard-scss"
+    ]
   },
   "dependencies": {
     "next": "16.4.6",
-    "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.2",
-    "@types/node": "^20",
+    "@biomejs/biome": "2.6.8",
+    "@types/node": "26.6.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "typescript": "^5"
+    "postcss": "8.5.33",
+    "sass": "1.108.2",
+    "stylelint": "18.0.0",
+    "stylelint-config-standard-scss": "18.0.0",
+    "typescript": "^7.0.2"
   }
 }

@@ -1,0 +1,4 @@
+allowBuilds:
+  "@parcel/watcher": true
+# pnpm 12 reads project settings here, including in a single-package project.
+engineStrict: true
